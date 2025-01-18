@@ -1,6 +1,30 @@
 from mnemonic import Mnemonic
 from bitcoinlib.keys import HDKey
+import hashlib
+import base58
 
+def private_key_to_wif(private_key_hex, compressed=True):
+    try:
+        # Step 1: Add version prefix (0x80 for Bitcoin mainnet)
+        versioned_key = bytes.fromhex("80") + bytes.fromhex(private_key_hex)
+        
+        # Step 2: Add compression flag if required
+        if compressed:
+            versioned_key += bytes.fromhex("01")
+        
+        # Step 3: Double SHA-256 hash
+        hash1 = hashlib.sha256(versioned_key).digest()
+        hash2 = hashlib.sha256(hash1).digest()
+        
+        # Step 4: Append first 4 bytes of hash as checksum
+        checksum = hash2[:4]
+        final_key = versioned_key + checksum
+        
+        # Step 5: Encode in Base58
+        wif_key = base58.b58encode(final_key).decode("utf-8")
+        return wif_key
+    except Exception as e:
+        return f"Error: {e}"
 
 # Function to generate 10 native SegWit (Bech32) addresses
 def generate_native_segwit_addresses(mnemonic_words, passphrase):
@@ -60,7 +84,7 @@ def main():
             print(f"Address {idx+1}:")
             print(f"  Address: {address}")
             print(f"  Public Key: {pubkey}")
-            print(f"  Private Key: {privkey}\n")
+            print(f"  Private Key: {private_key_to_wif(privkey)}\n")
     else:
         print("Failed to generate addresses.")
 
