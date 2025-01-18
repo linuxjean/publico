@@ -1,6 +1,5 @@
 asn1crypto==1.5.1
 base58==2.1.1
-bip-utils==2.9.3
 bitcoinlib==0.7.1
 cbor2==5.6.5
 certifi==2024.12.14
