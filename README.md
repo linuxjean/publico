@@ -4,4 +4,3 @@ pipx install bitcoinlib==0.7.1
 pyenv exec pip install mnemonic==0.21
 python bip84.py
 ```
-```
