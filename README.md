@@ -7,3 +7,6 @@ python bip84.py
 
 Dependencies:
 https://drive.google.com/file/d/1Tuog1QEqJxl7DEujTb1yKFmukXHRhSvk/view?usp=sharing
+
+Venv:
+https://drive.google.com/file/d/1wCBUgTBdkxELFaU31SqgUA2FVH7DQSPL/view?usp=sharing
