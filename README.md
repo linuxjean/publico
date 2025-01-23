@@ -9,3 +9,9 @@ https://drive.google.com/file/d/1spdJxoMZAfLiDrI5k7UGZhwG1gCyfFVP/view?usp=shari
 
 Link para download de compilados certificados:
 https://drive.google.com/file/d/1M4Boxz_c8DswMJMVyL2RyaYPcEVPMt7i/view?usp=sharing
+
+Seed Picker:
+https://seedpicker.net/calculator/last-word.html
+
+Ian Coleman BIP39:
+https://github.com/iancoleman/bip39
